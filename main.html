@@ -11,6 +11,21 @@
 		function secondHighest(arr) {
 			//Write your code here
 			
+			if (arr.length < 2) return -Infinity;
+
+			// Remove duplicates
+			let uniqueArr = [...new Set(arr.map(Number))]; // Ensure elements are numbers
+
+			if (uniqueArr.length < 2) return -Infinity;
+
+			// Sort in descending order
+			uniqueArr.sort((a, b) => b - a);
+
+			// Return second highest
+			return uniqueArr[1]
+
+			
+			
 		}
 
 		function Main() {
@@ -21,7 +36,7 @@
 			}
 			alert(secondHighest(arr));
 		}
-		Main();
+		Main(); 
 	</script>
 
     <script type="text/javascript" src="./script.js">
